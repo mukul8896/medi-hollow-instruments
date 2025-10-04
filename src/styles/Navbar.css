@@ -1,0 +1,13 @@
+.navbar-custom {
+  margin-top: 35px; /* Adjusted for new TopHeader height */
+  height: 65px; /* Reduced from 80px */
+  background-color: #343a40;
+  z-index: 1600;
+}
+
+.logo-img {
+  height: 50px; /* Reduced from 60px */
+  width: 190px; /* Reduced from 230px */
+  border-radius: 5px;
+  object-fit: cover;
+}

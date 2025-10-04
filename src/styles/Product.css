@@ -1,0 +1,104 @@
+.product-item:hover {
+  color: #007bff !important;
+  background-color: transparent !important;
+  font-weight: bold;
+}
+
+.active-product {
+  background: #343a40 !important;
+  color: white !important;
+  font-weight: bold;
+}
+.active-product a {
+  color: white !important;
+}
+.active-product:hover {
+  background: #23272b !important;
+}
+
+.image-container {
+  overflow: hidden;
+}
+.image-container img {
+  transition: transform 0.3s ease-in-out;
+}
+.image-container:hover img {
+  transform: scale(1.2);
+}
+
+.table-hover tbody tr:hover {
+  background: #f1f1f1;
+}
+
+.main-flex-layout {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.product-details-flex {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+}
+
+/* New styles for product image slider container */
+.slider-image-container {
+  width: 100%;
+  height: 400px; /* match slider image height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* Slick Slider Arrow Overrides */
+.slick-arrow {
+  background: #212529 !important;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: #fff !important;
+  font-size: 20px;
+  opacity: 1;
+}
+.slick-prev {
+  left: 10px !important;
+}
+.slick-next {
+  right: 10px !important;
+}
+
+.with-vertical-bar {
+  position: relative;
+  padding-left: 20px !important;
+  margin-left: 0 !important;
+}
+
+.with-vertical-bar::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  bottom: 6px;
+  width: 4px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #1986ff 60%, #71d7fd 100%);
+  box-shadow: 0 0 12px #3cc4fcaa;
+  opacity: 0.99;
+  z-index: 0;
+}
+
+/* Existing styles here... */

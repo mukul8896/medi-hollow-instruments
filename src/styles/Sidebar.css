@@ -1,0 +1,176 @@
+/* Sidebar container */
+.sidebar-pro {
+  background: #f8f9fa;
+  padding: 18px 14px 18px 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+  max-height: 84vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1.5px solid #e0e9f0;
+}
+
+/* Category Button */
+.sidebar-category-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #2354a3 0%, #3d73c5 100%);
+  border: none;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #eaf3ff;
+  padding: 11px 13px !important;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  margin-top: 6px;
+  box-shadow: 0 1.5px 4px rgba(30,60,140,0.13);
+  transition: all 0.19s;
+  letter-spacing: 0.2px;
+  border-left: 4px solid #2354a3;
+}
+.sidebar-category-btn.active,
+.sidebar-category-btn:hover {
+  background: linear-gradient(135deg, #006bff 0%, #003b84 100%);
+  color: #fff;
+  font-weight: 800;
+}
+
+.sidebar-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #223247;
+  margin-bottom: 15px;
+  letter-spacing: 0.07rem;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 2px solid #b3d4fc20;
+  padding-bottom: 8px;
+  margin-top: 0;
+}
+
+/* Subcategory button */
+.sidebar-subcat-name-btn {
+  width: 97%;
+  background: #f3f8fe;
+  border: 2px solid #b1ccf1;
+  border-radius: 7px;
+  padding: 10.5px 12px;
+  margin: 8px 0 8px 5px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1165c3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background .17s, color .17s, border .18s;
+}
+.sidebar-subcat-name-btn:hover,
+.sidebar-subcat-name-btn:focus,
+.sidebar-subcat-name-btn.active {
+  background: #e9f3ff;
+  border-color: #82b6fc;
+  color: #0047a7;
+  border: 2px solid #0047a7;
+}
+
+.sidebar-subcat-list {
+  padding-left: 12px;
+  margin-top: 4px;
+  background: linear-gradient(90deg, #f7fafc 0%, #f6faff 100%);
+}
+
+/* Product item row */
+.sidebar-product-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+.sidebar-product-item {
+  margin-bottom: 7px;
+  padding: 7.5px 10px 7.5px 0;
+  border-radius: 7px;
+  background: #fff;
+  border: 1.3px solid #e2e8f4;
+  display: flex;
+  align-items: center;
+  transition: all 0.18s;
+  position: relative;
+}
+.sidebar-product-item:hover {
+  background: #f1f8ff;
+  border-color: #7fbaff;
+}
+.sidebar-product-item.active-product {
+  background: linear-gradient(87deg, #1860cb 50%, #56abff 100%);
+  color: #fff;
+  font-weight: 800;
+  border-left: 5px solid #1860cb;
+  box-shadow: 0 2px 10px #1d74e615;
+  z-index: 2;
+}
+.sidebar-product-item.active-product a,
+.sidebar-product-item.active-product .active-link {
+  color: #fff !important;
+  font-weight: 800;
+}
+.sidebar-product-item a {
+  color: #244;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  transition: color 0.14s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 4px;
+}
+.sidebar-product-item a.active-link {
+  color: #123179;
+  font-weight: 700;
+}
+
+.sidebar-product-bullet {
+  display: inline-flex;
+  width: 22px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6px;
+}
+.sidebar-product-bullet-current {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 2px #56c7ff22;
+}
+.sidebar-product-bullet-normal {
+  width: 8.5px;
+  height: 8.5px;
+  border-radius: 50%;
+  background: #bacee3;
+}
+
+/* Hide scroll on sidebar except when hovered */
+.sidebar-pro { scrollbar-width: thin; scrollbar-color: #b1ccf1 #f8f9fa;}
+.sidebar-pro::-webkit-scrollbar { width: 7px; background: #f8f9fa;}
+.sidebar-pro::-webkit-scrollbar-thumb { background: #b1ccf1; border-radius: 999px; }
+.sidebar-pro:hover { overflow-y: auto;}
+
+.with-vertical-bar {
+  position: relative;
+  padding-left: 20px !important;
+  margin-left: 0 !important;
+}
+
+.with-vertical-bar::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  bottom: 6px;
+  width: 4px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #1986ff 60%, #71d7fd 100%);
+  box-shadow: 0 0 12px #3cc4fcaa;
+  opacity: 0.99;
+  z-index: 0;
+}
+

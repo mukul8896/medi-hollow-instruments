@@ -1,0 +1,16 @@
+.top-header {
+  font-size: 12px; /* Reduced from 14px */
+  font-weight: normal;
+  background-color: #01060a;
+  color: white;
+  padding: 8px 16px; /* Reduced from 10px 20px */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+  height: 35px; /* Reduced from 40px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
