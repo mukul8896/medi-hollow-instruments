@@ -1,0 +1,4 @@
+/* Main content */
+.content-container {
+  padding-top: 100px; /* TopHeader + Navbar height */
+}

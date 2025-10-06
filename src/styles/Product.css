@@ -1,0 +1,109 @@
+/* --------------------------------------------
+   Product Page Styles (full)
+   -------------------------------------------- */
+
+body {
+  background-color: #f7f9fc;
+}
+
+/* Layout containers */
+.main-flex-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.product-page-container {
+  padding-top: 0px;
+}
+
+/* Product Details Section */
+.product-details-flex {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+  padding: 24px;
+  overflow: hidden;
+}
+
+/* --------------------------------------------
+   Product Image Slider
+   -------------------------------------------- */
+.slider-image-container {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #fff;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+  padding: 10px;
+}
+
+.slider-image-container img {
+  transition: transform 0.3s ease-in-out;
+}
+.slider-image-container:hover img {
+  transform: scale(1.1);
+}
+
+/* Table hover */
+.table-hover tbody tr:hover {
+  background: #f8f9fa;
+}
+
+/* Description / Headings */
+.section-heading {
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+
+.details-header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .main-flex-layout {
+    flex-direction: column !important;
+  }
+
+  .product-details-flex {
+    margin-top: 20px;
+    padding: 16px;
+  }
+
+  .slider-image-container {
+    height: 300px !important;
+  }
+
+  .breadcrumb {
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-image-container {
+    height: 250px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-image-container {
+    height: 200px !important;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+}

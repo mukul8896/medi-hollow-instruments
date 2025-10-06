@@ -1,0 +1,110 @@
+{
+  "Hospital Holloware": {
+    "Bed Pan": [
+      {
+        "id": 11,
+        "name": "Bed Pan Female",
+        "description": "Also Available in 304 Grade.",
+        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
+        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "featured": true
+      },
+      {
+        "id": 12,
+        "name": "Bed Pan Male",
+        "description": "Also Available in 304 Grade.",
+        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
+        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "featured": true
+      }
+    ],
+    "Urinal": [
+      {
+        "id": 21,
+        "name": "Urinal Male",
+        "description": "Also Available in 304 Grade.",
+        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
+        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "featured": true
+      },
+      {
+        "id": 22,
+        "name": "Urinal Female",
+        "description": "Also Available in 304 Grade.",
+        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
+        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "featured": true
+      }
+    ],
+    "Surgical Trays": [
+      {
+        "id": 31,
+        "name": "Kidney Tray",
+        "description": "Also Available in 304 Grade.",
+        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
+        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "featured": true
+      },
+      {
+        "id": 32,
+        "name": "Instrument Tray",
+        "description": "Also Available in 304 Grade.",
+        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
+        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "featured": true
+      },
+      {
+        "id": 33,
+        "name": "Catheter Tray",
+        "description": "Also Available in 304 Grade.",
+        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
+        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "featured": true
+      },
+      {
+        "id": 34,
+        "name": "Mayo Table Tray",
+        "description": "Also Available in 304 Grade.",
+        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
+        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "featured": true
+      },
+      {
+        "id": 35,
+        "name": "Deep Tray",
+        "description": "Also Available in 304 Grade.",
+        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
+        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "featured": true
+      }
+    ]
+  },
+  "Surgicals": {
+    "Bed Pan": [
+      {
+        "id": 122,
+        "name": "Female Bed Pan 1",
+        "description": "Also Available in 304 Grade.",
+        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
+        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "featured": true
+      },
+      {
+        "id": 222,
+        "name": "Female Bed Pan 2",
+        "description": "Also Available in 304 Grade.",
+        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
+        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "featured": true
+      },
+      {
+        "id": 322,
+        "name": "Female Bed Pan 3",
+        "description": "Also Available in 304 Grade.",
+        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
+        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "featured": true
+      }
+    ]
+  }
+}
