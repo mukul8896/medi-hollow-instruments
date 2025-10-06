@@ -162,6 +162,41 @@ function HomePage({ productsData }) {
                 </div>
               </section>
             )}
+
+            {/* Products by Category Section */}
+            {/* {Object.keys(productsData).map((category) => (
+              <div key={category} className="category-section mb-5">
+                <h2 className="category-title mb-4">{category}</h2>
+                {Object.keys(productsData[category]).map((subcategory) => (
+                  <div key={subcategory} className="subcategory-section mb-5">
+                    <h4 className="subcategory-title mb-3">{subcategory}</h4>
+                    <div className="row">
+                      {productsData[category][subcategory]
+                        .slice(0, 3)
+                        .map((product) => (
+                          <div key={product.id} className="col-md-4 mb-4">
+                            <Card
+                              product={product}
+                              onQuickQuery={(p) => setQueryProduct(p)}
+                              showViewProduct={true}
+                            />
+                          </div>
+                        ))}
+                      {productsData[category][subcategory].length > 3 && (
+                        <div className="col-12 text-center mt-3">
+                          <Link
+                            to={`/category/${category}/${subcategory}`}
+                            className="btn btn-outline-primary btn-lg"
+                          >
+                            View All {subcategory} Products ({productsData[category][subcategory].length})
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))} */}
           </div>
         </div>
       </div>
