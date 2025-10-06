@@ -1,104 +1,109 @@
-.product-item:hover {
-  color: #007bff !important;
-  background-color: transparent !important;
-  font-weight: bold;
+/* --------------------------------------------
+   Product Page Styles (full)
+   -------------------------------------------- */
+
+body {
+  background-color: #f7f9fc;
 }
 
-.active-product {
-  background: #343a40 !important;
-  color: white !important;
-  font-weight: bold;
-}
-.active-product a {
-  color: white !important;
-}
-.active-product:hover {
-  background: #23272b !important;
-}
-
-.image-container {
-  overflow: hidden;
-}
-.image-container img {
-  transition: transform 0.3s ease-in-out;
-}
-.image-container:hover img {
-  transform: scale(1.2);
-}
-
-.table-hover tbody tr:hover {
-  background: #f1f1f1;
-}
-
+/* Layout containers */
 .main-flex-layout {
   display: flex;
+  align-items: flex-start;
   gap: 32px;
-  margin-top: 32px;
+  margin-top: 10px;
   width: 100%;
 }
 
+.product-page-container {
+  padding-top: 0px;
+}
+
+/* Product Details Section */
 .product-details-flex {
   flex: 1;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
   padding: 24px;
+  overflow: hidden;
 }
 
-/* New styles for product image slider container */
+/* --------------------------------------------
+   Product Image Slider
+   -------------------------------------------- */
 .slider-image-container {
   width: 100%;
-  height: 400px; /* match slider image height */
+  height: 400px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  background: #fff;
-}
-
-/* Slick Slider Arrow Overrides */
-.slick-arrow {
-  background: #212529 !important;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-.slick-prev:before,
-.slick-next:before {
-  color: #fff !important;
-  font-size: 20px;
-  opacity: 1;
-}
-.slick-prev {
-  left: 10px !important;
-}
-.slick-next {
-  right: 10px !important;
-}
-
-.with-vertical-bar {
-  position: relative;
-  padding-left: 20px !important;
-  margin-left: 0 !important;
-}
-
-.with-vertical-bar::before {
-  content: "";
-  position: absolute;
-  top: 4px;
-  left: 6px;
-  bottom: 6px;
-  width: 4px;
   border-radius: 12px;
-  background: linear-gradient(180deg, #1986ff 60%, #71d7fd 100%);
-  box-shadow: 0 0 12px #3cc4fcaa;
-  opacity: 0.99;
-  z-index: 0;
+  background: #fff;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+  padding: 10px;
 }
 
-/* Existing styles here... */
+.slider-image-container img {
+  transition: transform 0.3s ease-in-out;
+}
+.slider-image-container:hover img {
+  transform: scale(1.1);
+}
+
+/* Table hover */
+.table-hover tbody tr:hover {
+  background: #f8f9fa;
+}
+
+/* Description / Headings */
+.section-heading {
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+
+.details-header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .main-flex-layout {
+    flex-direction: column !important;
+  }
+
+  .product-details-flex {
+    margin-top: 20px;
+    padding: 16px;
+  }
+
+  .slider-image-container {
+    height: 300px !important;
+  }
+
+  .breadcrumb {
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-image-container {
+    height: 250px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-image-container {
+    height: 200px !important;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+}

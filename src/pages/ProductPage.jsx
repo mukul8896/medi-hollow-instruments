@@ -1,9 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Product.css";
+import "../styles/Sidebar.css";
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card";
 import ProductQueryForm from "../components/ProductQueryForm";
@@ -27,28 +25,36 @@ function ProductPage({ productsData }) {
   const [queryProduct, setQueryProduct] = useState(null);
   const [openCategory, setOpenCategory] = useState("");
   const [openSubcategories, setOpenSubcategories] = useState({});
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 992);
 
-  // Find the product in the nested structure
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 992);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const findProduct = () => {
     for (const category of Object.keys(productsData)) {
       for (const subcategory of Object.keys(productsData[category])) {
         const product = productsData[category][subcategory].find(
           (p) => p.id === parseInt(productId)
-        );    if (product) {
-          return { ...product, category, subcategory };
-        }
+        );
+        if (product) return { ...product, category, subcategory };
       }
     }
     return null;
   };
 
   const product = findProduct();
- useEffect(() => {
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
     if (product) {
       setOpenCategory(product.category);
-      setOpenSubcategories(prev => ({
+      setOpenSubcategories((prev) => ({
         ...prev,
-        [product.subcategory]: true
+        [product.subcategory]: true,
       }));
     }
   }, [productId]);
@@ -62,21 +68,19 @@ function ProductPage({ productsData }) {
   }
 
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    arrows: true,
+    pauseOnHover: true,
   };
 
-  const maxProductNameLength = getMaxProductNameLength(productsData);
   const sidebarWidth = Math.min(
-    Math.max(250, maxProductNameLength * 10 + 100),
-    400
+    Math.max(250, getMaxProductNameLength(productsData) * 10 + 100),
+    380
   );
 
   const relatedProducts =
@@ -85,88 +89,99 @@ function ProductPage({ productsData }) {
     );
 
   const toggleSubcategory = (subcategory) => {
-    setOpenSubcategories(prev => ({
+    setOpenSubcategories((prev) => ({
       ...prev,
-      [subcategory]: !prev[subcategory]
+      [subcategory]: !prev[subcategory],
     }));
   };
 
   return (
-    <>
-      <div
-        className="main-flex-layout"
-        style={{ display: "flex", gap: "10px", marginTop: "5px" }}
-      >
-        {/* Sidebar */}
-        <div className="sidebar-pro" style={{ width: `${sidebarWidth}px` }}>
-          <h4 className="sidebar-title">All Products</h4>
-          {Object.keys(productsData).map((category) => (
-            <div key={category} className="mb-2">
-              <button
-                className={`sidebar-category-btn ${
-                  openCategory === category ? "active" : ""
-                }`}
-                onClick={() =>
-                  setOpenCategory(openCategory === category ? "" : category)
-                }
-              >
-                {category}
-                <span className="float-end">
-                  {openCategory === category ? "▲" : "▼"}
-                </span>
-              </button>
-              {openCategory === category && (
-                <div className="sidebar-subcat-list">
-                  {Object.keys(productsData[category]).map((subcategory) => (
-                    <div key={subcategory} className="mb-2">
-                      <button
-                        className="sidebar-subcat-name-btn"
-                        onClick={() => toggleSubcategory(subcategory)}
-                      >
-                        <span className="sidebar-subcat-name-text">{subcategory}</span>
-                        <span className="sidebar-subcat-arrow">
-                          {openSubcategories[subcategory] ? "▲" : "▼"}
-                        </span>
-                      </button>
-                      {openSubcategories[subcategory] && (
-                        <ul className="sidebar-product-list with-vertical-bar">
-                          {productsData[category][subcategory].map((item) => (
-                            <li
-                              key={item.id}
-                              className={`sidebar-product-item ${
-                                item.id === product.id ? "active-product" : ""
-                              }`}
-                            >
-                              <span className="sidebar-product-bullet">
-                                {item.id === product.id ? (
-                                  <span className="sidebar-product-bullet-current" />
-                                ) : (
-                                  <span className="sidebar-product-bullet-normal" />
-                                )}
-                              </span>
-                              <Link
-                                to={`/product/${item.id}`}
-                                className={
-                                  item.id === product.id ? "active-link" : ""
-                                }
-                                style={{ flex: 1 }}
-                              >
-                                {item.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+    <div className="container product-page-container">
+      {/* Mobile toggle */}
+      {!isDesktop && (
+        <div className="text-center mt-3">
+          <button
+            className="btn btn-outline-primary fw-semibold"
+            onClick={() => setIsSidebarVisible(!isSidebarVisible)}
+            style={{ borderRadius: "8px" }}
+          >
+            {isSidebarVisible ? "Hide Product List ▲" : "Show Product List ▼"}
+          </button>
         </div>
+      )}
+
+      <div className="main-flex-layout flex-lg-row flex-column">
+        {/* Sidebar */}
+        {(isDesktop || isSidebarVisible) && (
+          <div
+            className="sidebar-pro"
+            style={{
+              width: isDesktop ? `${sidebarWidth}px` : "100%",
+            }}
+          >
+            <h4 className="sidebar-title">All Products</h4>
+            {Object.keys(productsData).map((category) => (
+              <div key={category} className="mb-2">
+                <button
+                  className={`sidebar-category-btn ${
+                    openCategory === category ? "active" : ""
+                  }`}
+                  onClick={() =>
+                    setOpenCategory(openCategory === category ? "" : category)
+                  }
+                >
+                  {category}
+                  <span className="float-end">
+                    {openCategory === category ? "▲" : "▼"}
+                  </span>
+                </button>
+                {openCategory === category && (
+                  <div className="sidebar-subcat-list">
+                    {Object.keys(productsData[category]).map((subcategory) => (
+                      <div key={subcategory}>
+                        <button
+                          className="sidebar-subcat-name-btn"
+                          onClick={() => toggleSubcategory(subcategory)}
+                        >
+                          {subcategory}
+                          <span>
+                            {openSubcategories[subcategory] ? "▲" : "▼"}
+                          </span>
+                        </button>
+                        {openSubcategories[subcategory] && (
+                          <ul className="sidebar-product-list with-vertical-bar">
+                            {productsData[category][subcategory].map((item) => (
+                              <li
+                                key={item.id}
+                                className={`sidebar-product-item ${
+                                  item.id === product.id
+                                    ? "active-product"
+                                    : ""
+                                }`}
+                              >
+                                <Link
+                                  to={`/product/${item.id}`}
+                                  onClick={() =>
+                                    !isDesktop && setIsSidebarVisible(false)
+                                  }
+                                >
+                                  {item.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Product Details */}
-        <div className="product-details-flex" style={{ flex: 1, minWidth: 0 }}>
+        <div className="product-details-flex mt-4 mt-lg-0">
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
@@ -181,16 +196,17 @@ function ProductPage({ productsData }) {
           </nav>
 
           <div className="shadow-lg p-4">
-            <div className="d-flex justify-content-between align-items-start mb-3">
-              <h1 className="mb-0">{product.name}</h1>
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-start mb-3">
+              <h1 className="mb-3 mb-md-0">{product.name}</h1>
               <button
                 className="btn btn-info fw-semibold"
                 style={{
                   borderRadius: "8px",
-                  padding: "10px 24px",
+                  padding: "8px 20px",
                   fontSize: "1rem",
-                  boxShadow: "0 2px 8px hsla(190, 90%, 50%, 0.20)",
-                  letterSpacing: "0.3px"
+                  color: "#fff",
+                  backgroundColor: "hsla(204, 90%, 50%, 1.00)",
+                  border: "1px solid hsla(199, 90%, 40%, 1.00)",
                 }}
                 onClick={() => setQueryProduct(product)}
               >
@@ -198,22 +214,19 @@ function ProductPage({ productsData }) {
               </button>
             </div>
 
-            {/* Image Slider */}
             <div className="mb-4">
               {product.images && product.images.length > 0 ? (
-                <Slider {...settings} className="rounded">
+                <Slider {...settings}>
                   {product.images.map((img, index) => (
-                    <div key={index} className="text-center">
+                    <div key={index}>
                       <div className="slider-image-container">
                         <img
                           src={img}
                           alt={product.name}
-                          className="img-fluid rounded"
                           style={{
                             objectFit: "contain",
                             width: "100%",
                             height: "100%",
-                            background: "#fff"
                           }}
                         />
                       </div>
@@ -229,7 +242,6 @@ function ProductPage({ productsData }) {
               )}
             </div>
 
-            {/* Description */}
             {product.description && (
               <>
                 <h4>Description</h4>
@@ -237,8 +249,7 @@ function ProductPage({ productsData }) {
               </>
             )}
 
-            {/* Sizes Table */}
-            {product.sizes && product.sizes.length > 0 && (
+            {product.sizes?.length > 0 && (
               <>
                 <h4 className="mt-4">Available Sizes</h4>
                 <div className="table-responsive">
@@ -264,13 +275,15 @@ function ProductPage({ productsData }) {
               </>
             )}
 
-            {/* Related Products */}
             {relatedProducts.length > 0 && (
               <div className="mt-5">
                 <h4>Related Products in {product.subcategory}</h4>
                 <div className="row">
                   {relatedProducts.slice(0, 3).map((relatedProduct) => (
-                    <div key={relatedProduct.id} className="col-md-4">
+                    <div
+                      key={relatedProduct.id}
+                      className="col-md-6 col-lg-5 mb-3"
+                    >
                       <Card
                         product={relatedProduct}
                         onQuickQuery={(p) => setQueryProduct(p)}
@@ -285,37 +298,13 @@ function ProductPage({ productsData }) {
         </div>
       </div>
 
-      {/* Query Form Modal via Portal */}
       <ProductQueryForm
         show={!!queryProduct}
         onClose={() => setQueryProduct(null)}
         product={queryProduct}
       />
-    </>
+    </div>
   );
 }
-
-/* Custom Arrows */
-const NextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", right: "10px", zIndex: 100 }}
-      onClick={onClick}
-    />
-  );
-};
-
-const PrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", left: "10px", zIndex: 100 }}
-      onClick={onClick}
-    />
-  );
-};
 
 export default ProductPage;

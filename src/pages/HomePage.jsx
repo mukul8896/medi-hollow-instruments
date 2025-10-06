@@ -5,8 +5,8 @@ import ProductQueryForm from "../components/ProductQueryForm";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import "../styles/Homepage.css";
 
-// Use the actual image paths from your public folder
 const companyGalleryImages = [
   "/assets/images/flash2.jpg",
   "/assets/images/flash3.jpg",
@@ -54,21 +54,14 @@ function HomePage({ productsData }) {
 
   // Enhanced professional slider settings with fixes
   const sliderSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3500,
-    arrows: true,
-    pauseOnHover: true,
-    cssEase: "ease-in-out",
-    adaptiveHeight: false,
-    lazyLoad: false, // IMPORTANT: Disable lazy loading to prevent disappearing
-    fade: false,
-    waitForAnimate: true,
-    swipeToSlide: true
+    arrows: false,
   };
 
   return (
@@ -80,12 +73,9 @@ function HomePage({ productsData }) {
             {/* Enhanced Company Summary Section */}
             <section className="company-summary-wrapper">
               <div className="company-summary">
-                <div className="section-badge">
-                  <span className="badge-text">About Us</span>
-                </div>
-                <h2 className="company-title text-center mb-4">
-                  Medi Hollow Instruments - Excellence in Medical Equipment
-                </h2>
+                <span className="mb-5 section-badge badge-text">
+                  Medi Hollow Instruments - "Excellence in Medical Equipment"
+                </span>
                 
                 <div className="row align-items-center g-5">
                   <div className="col-lg-6 mb-4 mb-lg-0">
@@ -120,11 +110,11 @@ function HomePage({ productsData }) {
                           <p className="stat-label">Years Experience</p>
                         </div>
                         <div className="stat-item">
-                          <h3 className="stat-number">500+</h3>
+                          <h3 className="stat-number">100+</h3>
                           <p className="stat-label">Products</p>
                         </div>
                         <div className="stat-item">
-                          <h3 className="stat-number">1000+</h3>
+                          <h3 className="stat-number">500+</h3>
                           <p className="stat-label">Happy Clients</p>
                         </div>
                       </div>
@@ -132,39 +122,32 @@ function HomePage({ productsData }) {
                   </div>
 
                   <div className="col-lg-6">
-                    <div className="slider-container-outer">
-                      <div className="slider-image-container">
-                        <Slider 
-                          {...sliderSettings} 
-                          ref={sliderRef}
-                          key={sliderKey}
-                        >
-                          {companyGalleryImages.map((imgSrc, idx) => (
-                            <div key={`slide-${idx}-${sliderKey}`} className="slider-img-wrapper">
-                              <img
-                                src={imgSrc}
-                                alt={`Medi Hollow Fecility ${idx + 1}`}
-                                className="company-slider-img"
-                                loading="eager"
-                                onError={(e) => {
-                                  console.error(`Failed to load fecility images: ${imgSrc}`);
-                                }}
-                              />
-                            </div>
+                        <Slider {...sliderSettings}>
+                          {companyGalleryImages.map((img, index) => (
+                            <div key={index} className="text-center">
+                                <img
+                                  src={img}
+                                  alt={img}
+                                  style={{
+                                    objectFit: "contain",
+                                    width: "100%",
+                                    height: "100%",
+                                    background: "#fff"
+                                  }}
+                                />
+                              </div>
                           ))}
                         </Slider>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
             </section>
             {/* Featured Products Section */}
             {featuredProducts.length > 0 && (
-              <section className="featured-products-section mb-5">
+              <section className="featured-products-section mb-2">
                 <div className="section-header text-center mb-5">
                   <h2 className="section-title">Featured Products</h2>
-                  <p className="section-subtitle">Discover our most popular surgical instruments</p>
+                  <p className="section-subtitle">Discover our most popular medical</p>
                 </div>
                 <div className="row">
                   {featuredProducts.slice(0, 6).map((product) => (
@@ -179,41 +162,6 @@ function HomePage({ productsData }) {
                 </div>
               </section>
             )}
-
-            {/* Products by Category Section */}
-            {Object.keys(productsData).map((category) => (
-              <div key={category} className="category-section mb-5">
-                <h2 className="category-title mb-4">{category}</h2>
-                {Object.keys(productsData[category]).map((subcategory) => (
-                  <div key={subcategory} className="subcategory-section mb-5">
-                    <h4 className="subcategory-title mb-3">{subcategory}</h4>
-                    <div className="row">
-                      {productsData[category][subcategory]
-                        .slice(0, 3)
-                        .map((product) => (
-                          <div key={product.id} className="col-md-4 mb-4">
-                            <Card
-                              product={product}
-                              onQuickQuery={(p) => setQueryProduct(p)}
-                              showViewProduct={true}
-                            />
-                          </div>
-                        ))}
-                      {productsData[category][subcategory].length > 3 && (
-                        <div className="col-12 text-center mt-3">
-                          <Link
-                            to={`/category/${category}/${subcategory}`}
-                            className="btn btn-outline-primary btn-lg"
-                          >
-                            View All {subcategory} Products ({productsData[category][subcategory].length})
-                          </Link>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ))}
           </div>
         </div>
       </div>

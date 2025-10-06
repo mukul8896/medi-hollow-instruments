@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/Card.css";
 
 // Base URL for public assets in Vite
 const PUBLIC_URL = import.meta.env.BASE_URL || '';

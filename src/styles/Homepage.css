@@ -41,13 +41,13 @@
   background: linear-gradient(90deg, #1565c0 0%, #42a5f5 100%);
 }
 
-.company-summary:hover {
+/* .company-summary:hover {
   box-shadow: 
     0 8px 12px rgba(0, 0, 0, 0.03),
     0 20px 40px rgba(0, 0, 0, 0.08),
     0 0 0 1px rgba(21, 101, 192, 0.1);
   transform: translateY(-4px);
-}
+} */
 
 /* Section Badge */
 .section-badge {
@@ -62,20 +62,10 @@
 .badge-text {
   color: #ffffff;
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-}
-
-/* Company Title */
-.company-title {
-  font-family: "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
-  font-weight: 800;
-  color: #1a1a1a;
-  font-size: 2.25rem;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 /* Content Wrapper */
@@ -104,7 +94,7 @@
 }
 
 .lead-text {
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   color: #495057;
   margin: 0;
@@ -142,7 +132,7 @@
 }
 
 .stat-number {
-  font-size: 2.5rem;
+  font-size: 2.0rem;
   font-weight: 800;
   color: #1565c0;
   margin: 0;
@@ -259,8 +249,8 @@
 }
 
 .slick-dots li button {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   padding: 0;
   border: none;
   border-radius: 50%;

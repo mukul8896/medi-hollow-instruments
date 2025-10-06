@@ -1,27 +1,46 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import emailjs from "emailjs-com"; // You'll need to install emailjs-com package
-import "../styles/ProductQueryForm.css"; // Optional: Separate CSS for styling
+import "../styles/ProductQueryForm.css";
 
 function ProductQueryForm({ show, onClose, product }) {
   const [mounted, setMounted] = useState(false);
   const [form, setForm] = useState({
     productName: product?.name || "",
-    userName: "",
+    contactNumber: "",
     email: "",
     query: "",
   });
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
+  const [isValid, setIsValid] = useState(false); // ✅ new state
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   useEffect(() => {
-    setForm((f) => ({ ...f, productName: product?.name || "" }));
-  }, [product]);
+    if (show) {
+      setForm({
+        productName: product?.name || "",
+        contactNumber: "",
+        email: "",
+        query: "",
+      });
+      setSent(false);
+      setError("");
+    }
+  }, [show, product]);
+
+  // ✅ Validation logic - checks if all fields are valid
+  useEffect(() => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const valid =
+      form.contactNumber.trim().length > 0 &&
+      emailRegex.test(form.email.trim()) &&
+      form.query.trim().length > 0;
+    setIsValid(valid);
+  }, [form]);
 
   if (!show || !mounted) return null;
 
@@ -36,34 +55,29 @@ function ProductQueryForm({ show, onClose, product }) {
     setError("");
     setSent(false);
 
-    // Example EmailJS integration
     try {
-      // Replace the following with your EmailJS user ID, service ID, and template ID
-      const result = await emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        {
-          product_name: form.productName,
-          user_name: form.userName,
-          user_email: form.email,
-          user_query: form.query,
-        },
-        "YOUR_USER_ID"
-      );
+      const resp = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await resp.json().catch(() => ({}));
+      if (!resp.ok) throw new Error(data.error || `HTTP ${resp.status}`);
       setSent(true);
-      setLoading(false);
     } catch (err) {
+      console.error("send email error:", err);
       setError("Failed to send. Please try again.");
+    } finally {
       setLoading(false);
     }
   };
 
-  // Optional: WhatsApp send fallback link generation
   const openWhatsApp = () => {
     const text = `Query about product '${form.productName}':
-Name: ${form.userName}
-Email: ${form.email}
-Query: ${form.query}`;
+    Name: ${form.contactNumber}
+    Email: ${form.email}
+    Query: ${form.query}`;
     const url = `https://wa.me/WHATSAPP_NUMBER?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank");
   };
@@ -71,49 +85,44 @@ Query: ${form.query}`;
   return ReactDOM.createPortal(
     <div
       className="modal d-block"
-      style={{
-        backgroundColor: "rgba(0, 0, 0, 0.55)",
-        zIndex: 9999,
-      }}
+      style={{ backgroundColor: "rgba(0, 0, 0, 0.55)", zIndex: 9999 }}
       onClick={onClose}
     >
-      <div className="modal-dialog modal-dialog-centered">
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-dialog modal-dialog-centered" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">Product Query</h5>
             <button
               type="button"
               className="btn-close"
-              onClick={onClose}
+              onClick={() => { setSent(false); setError(""); onClose(); }}
               aria-label="Close"
-            ></button>
+            />
           </div>
+
           <div className="modal-body">
             {!sent ? (
-              <form onSubmit={handleSubmit} noValidate>
+              <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label className="form-label fw-semibold">Product</label>
-                  <input
-                    type="text"
-                    className="form-control bg-light"
-                    value={form.productName}
-                    readOnly
-                  />
+                  <input type="text" className="form-control bg-light" value={form.productName} readOnly />
                 </div>
+
                 <div className="mb-3">
-                  <label className="form-label fw-semibold">Your Name</label>
+                  <label className="form-label fw-semibold">Your Contact Number</label>
                   <input
-                    name="userName"
-                    type="text"
+                    name="contactNumber"
+                    type="tel"
+                    inputMode="tel"
                     className="form-control"
-                    value={form.userName}
+                    value={form.contactNumber}
                     onChange={handleChange}
                     required
-                    minLength={2}
                   />
                 </div>
+
                 <div className="mb-3">
-                  <label className="form-label fw-semibold">Email</label>
+                  <label className="form-label fw-semibold">Your Email Address</label>
                   <input
                     name="email"
                     type="email"
@@ -123,40 +132,43 @@ Query: ${form.query}`;
                     required
                   />
                 </div>
+
                 <div className="mb-3">
                   <label className="form-label fw-semibold">Query</label>
                   <textarea
                     name="query"
                     className="form-control"
-                    rows={4}
+                    rows={5}
                     value={form.query}
                     onChange={handleChange}
                     required
-                    minLength={10}
                   />
                 </div>
+
                 {error && (
                   <div className="alert alert-danger" role="alert">
                     {error}
                   </div>
                 )}
+
                 <div className="d-flex gap-2">
                   <button
                     type="submit"
                     className="btn btn-primary flex-fill"
-                    disabled={loading}
+                    disabled={!isValid || loading}  // ✅ only enabled when valid
                   >
                     {loading ? "Sending..." : "Submit Query"}
                   </button>
                   <button
                     type="button"
                     className="btn btn-secondary flex-fill"
-                    onClick={onClose}
+                    onClick={() => { setSent(false); setError(""); onClose(); }}
                     disabled={loading}
                   >
                     Cancel
                   </button>
                 </div>
+
                 <div className="mt-3 text-center">
                   <small>
                     Or{" "}
@@ -165,7 +177,7 @@ Query: ${form.query}`;
                       className="btn btn-link"
                       onClick={openWhatsApp}
                       disabled={loading}
-                      style={{padding: 0}}
+                      style={{ padding: 0 }}
                     >
                       Send via WhatsApp
                     </button>
@@ -173,7 +185,7 @@ Query: ${form.query}`;
                 </div>
               </form>
             ) : (
-              <div className="alert alert-success">
+              <div className="alert alert-success mb-0" role="alert">
                 Thank you! Your query has been sent successfully.
               </div>
             )}

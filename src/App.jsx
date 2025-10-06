@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import TopHeader from "./components/TopHeader";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import siteConfig from "./siteConfig.json";
 
 
@@ -28,7 +29,7 @@ function App() {
     <Router>
       {config && <TopHeader address={config?.address} contact={config?.contact} />}
       <Navbar className="navbar-custom" sty/>
-      <div className="container content-container">
+      <div className="content-container">
         <Routes>
           <Route path="/" element={<HomePage productsData={productsData} />} />
           <Route path="/product/:productId" element={<ProductPage productsData={productsData} />} />
@@ -36,7 +37,9 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
+    
   );
 }
 
