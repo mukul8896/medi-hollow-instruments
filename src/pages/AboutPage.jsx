@@ -20,7 +20,7 @@ function AboutPage() {
       >
         <div className="container">
           <div className="row justify-content-center text-center">
-            <div className="col-xl-6 col-lg-9">
+            <div className="col-xl-8 col-lg-9">
               <h1 className="display-5 display-md-4 fw-bold mb-3">
                 {aboutData.title || "About Our Company"}
               </h1>
