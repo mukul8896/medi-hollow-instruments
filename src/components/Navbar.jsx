@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/images/logo.jpg";
+import logo from "../assets/images/site-icon.svg";
 import "../styles/Navbar.css";
 import "../styles/MegaMenu.css";
 

@@ -18,7 +18,7 @@
 }
 
 .th-left, .th-center, .th-right { display: flex; align-items: center; }
-.th-left { gap: 6px; }
+.th-left { gap: 1px; }
 .th-center { justify-content: center; gap: 6px; flex-wrap: wrap; }
 .th-right { justify-content: flex-end; gap: 6px; }
 
@@ -26,7 +26,7 @@
 .th-link:hover { color: #ffffff; }
 
 .th-soc {
-  height: 24px; width: 24px;
+  height: 22px; width: 22px;
   display: inline-flex; align-items: center; justify-content: center;
   color: #0b1220; background: #ffffff;
   border-radius: 50%;
@@ -42,15 +42,17 @@
 .truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* Tablets */
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   .th-inner { grid-template-columns: auto 1fr auto; }
   .th-left { display: none; }
-}
+} */
 
 /* Phones */
 @media (max-width: 576px) {
   .top-header { font-size: 11px; }
-  .th-inner { height: 42px; }
-  .th-center { gap: 4px; }
-  .th-soc { height: 22px; width: 22px; }
+  .th-inner { grid-template-columns: auto 1fr auto; }
+  .th-center { gap: 3px; }
+  .th-left { display: none; }
+  .emailaddress { display: none; }
+  .th-soc { height: 20px; width: 20px; }
 }

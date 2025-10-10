@@ -1,0 +1,24 @@
+<!-- Save as medi-hollow-logo.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" role="img" aria-labelledby="titleDesc">
+  <title id="titleDesc">Medi Hollow Instruments</title>
+  <desc>Logo: square emblem with three vertical bars and bold company name.</desc>
+
+  <!-- Colors -->
+  <!-- deep blue: #0b3b88, teal: #12a8a2 -->
+
+  <!-- Emblem: square frame -->
+  <g id="emblem" transform="translate(10,10)">
+    <!-- outer frame -->
+    <rect x="0" y="0" width="100" height="100" rx="6" fill="#0b3b88" />
+    <!-- inner white inset to form frame effect -->
+    <rect x="10" y="10" width="80" height="80" rx="4" fill="#ffffff" />
+    <!-- inner small blue L-shape (bottom + left) to match original style -->
+    <rect x="10" y="74" width="60" height="10" fill="#0b3b88" />
+    <rect x="10" y="20" width="10" height="54" fill="#0b3b88" />
+
+    <!-- three teal bars -->
+    <rect x="34" y="40" width="12" height="34" rx="1" fill="#12a8a2" />
+    <rect x="52" y="28" width="12" height="46" rx="1" fill="#12a8a2" />
+    <rect x="70" y="16" width="12" height="58" rx="1" fill="#12a8a2" />
+  </g>
+</svg>

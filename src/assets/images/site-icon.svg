@@ -1,0 +1,18 @@
+<!-- Save as medi-hollow-logo.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" role="img" aria-labelledby="titleDesc">
+  <title id="titleDesc">Medi Hollow Instruments</title>
+  <desc>Logo: square emblem with three vertical bars and bold company name.</desc>
+
+  <!-- Text: two-line, bold -->
+  <!-- Using system sans-serif families; font-weight heavy for small-size legibility -->
+  <g transform="translate(80,24)">
+    <text x="0" y="32" font-family="Montserrat, 'Helvetica Neue', Arial, sans-serif"
+          font-weight="900" font-size="40" fill="#FFFFFF" letter-spacing="0.5">
+      MEDI HOLLOW
+    </text>
+    <text x="0" y="79" font-family="Montserrat, 'Helvetica Neue', Arial, sans-serif"
+          font-weight="900" font-size="40" fill="#FFFFFF" letter-spacing="0.5">
+      INSTRUMENTS
+    </text>
+  </g>
+</svg>

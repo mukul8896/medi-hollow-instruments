@@ -19,10 +19,10 @@ function TopHeader({ address, contact }) {
         </div>
 
         <div className="th-center">
-          <FaPhoneAlt className="me-1 opacity-75" size={12} />
+          <FaPhoneAlt className="me-1 opacity-75 phoneNumber" size={12} />
           <a href={`tel:${contact.phone}`} className="th-link me-3">{contact.phone}</a>
-          <FaEnvelope className="me-1 opacity-75" size={12} />
-          <a href={`mailto:${contact.email}`} className="th-link">{contact.email}</a>
+          <FaEnvelope className="me-1 opacity-75 emailaddress" size={12} />
+          <a href={`mailto:${contact.email}`} className="th-link emailaddress">{contact.email}</a>
         </div>
 
         <div className="th-right">

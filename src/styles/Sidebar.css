@@ -116,12 +116,29 @@
 }
 
 /* Mobile adjustment */
-@media (max-width: 992px) {
+@media (max-width: 576px) {
   .sidebar-pro {
     position: relative;
     top: 0;
-    max-height: none;
     width: 100%;
+    max-height: none;
+    background: #fff;
+    border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 16px;
+  }
+
+  .sidebar-category-btn {
+    font-size: 0.9rem;
+    padding: 10px 11px !important;
+  }
+
+  .sidebar-subcat-name-btn {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .sidebar-product-item {
+    padding: 6px 8px;
   }
 }

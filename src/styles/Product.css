@@ -72,38 +72,215 @@ body {
   justify-content: flex-end;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
+/* Mobile Responsive Styles */
+@media (max-width: 991px) {
+  /* Overall container adjustments */
+  .product-page-container {
+    padding: 0 15px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   .main-flex-layout {
-    flex-direction: column !important;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
   }
 
+  /* Product section box */
   .product-details-flex {
-    margin-top: 20px;
     padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(16, 24, 40, 0.08);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
-  .slider-image-container {
-    height: 300px !important;
-  }
-
-  .breadcrumb {
-    font-size: 0.9rem;
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 768px) {
+  /* Image slider area */
   .slider-image-container {
     height: 250px !important;
+    padding: 8px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+  }
+
+  .slider-image-container img {
+    object-fit: contain !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 230px !important;
+    display: block !important;
+    margin: 0 auto;
+  }
+
+  /* Heading + text adjustments */
+  h1, .section-heading {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+
+  p {
+    font-size: 0.95rem;
+    text-align: left;
+    word-wrap: break-word;
+  }
+
+  /* Breadcrumb compact view */
+  .breadcrumb {
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    padding: 8px 12px;
+  }
+
+  /* Buttons */
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    white-space: nowrap;
+  }
+
+  /* Table section */
+  .table-responsive {
+    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    font-size: 0.85rem;
+    width: 100%;
+    min-width: 300px;
+  }
+
+  /* Ensure proper spacing */
+  .shadow-lg {
+    padding: 16px !important;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .row {
+    margin: 0;
+    width: 100%;
+  }
+
+  .col-md-6,
+  .col-lg-5 {
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  /* Fix flex layouts on mobile */
+  .d-flex.flex-column.flex-md-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .d-flex.flex-column.flex-md-row .btn {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  /* Slick slider adjustments for mobile */
+  .slick-slider {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .slick-list {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .slick-track {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center;
+  }
+
+  .slick-slide {
+    width: 100% !important;
+    display: flex !important;
+  }
+
+  .slick-slide > div {
+    width: 100%;
+    max-width: 100%;
+    display: flex !important;
+  }
+
+  .slick-slide img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Hide arrows on mobile - users will swipe */
+  .slick-prev,
+  .slick-next {
+    display: none !important;
   }
 }
 
 @media (max-width: 576px) {
+  /* Extra small devices */
+  .product-page-container {
+    padding: 0 10px;
+  }
+
+  .product-details-flex {
+    padding: 12px;
+  }
+
   .slider-image-container {
     height: 200px !important;
+    padding: 5px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
   }
-  h1 {
-    font-size: 1.3rem;
+
+  h1, .section-heading {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+
+  .shadow-lg {
+    padding: 12px !important;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  /* Ensure cards don't overflow */
+  .col-md-6,
+  .col-lg-5 {
+    padding: 0 5px;
   }
 }
