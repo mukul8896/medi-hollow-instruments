@@ -92,7 +92,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container bottom-inner">
-          <p className="mb-0">© {year} Elite Surgical. All rights reserved.</p>
+          <p className="mb-0">© {year} medi Hollow Instruments. All rights reserved.</p>
           <ul className="bottom-links">
             <li><Link to="/privacy">Privacy</Link></li>
             <li><Link to="/terms">Terms</Link></li>

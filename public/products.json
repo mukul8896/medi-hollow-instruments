@@ -1,9 +1,9 @@
 {
   "Hospital Holloware": {
-    "Bed Pan": [
+    "Bed Panes": [
       {
         "id": 11,
-        "name": "Bed Pan Female",
+        "name": "Bedpane Female",
         "description": "Also Available in 304 Grade.",
         "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
         "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
@@ -11,14 +11,14 @@
       },
       {
         "id": 12,
-        "name": "Bed Pan Male",
+        "name": "Bedpane Male",
         "description": "Also Available in 304 Grade.",
         "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
         "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
         "featured": true
       }
     ],
-    "Urinal": [
+    "Urinals": [
       {
         "id": 21,
         "name": "Urinal Male",

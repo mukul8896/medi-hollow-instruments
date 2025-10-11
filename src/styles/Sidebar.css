@@ -51,7 +51,7 @@
   border: 2px solid #b1ccf1;
   border-radius: 7px;
   padding: 9px 12px;
-  margin: 8px 0 8px 5px;
+  margin: 5px 0 5px 0px;
   font-weight: 600;
   font-size: 0.95rem;
   color: #1165c3;
@@ -76,11 +76,13 @@
 .sidebar-product-list {
   list-style: none;
   padding-left: 0;
-  margin: 0;
+  border-left: 2px solid #0d6efd;
+  padding-left: 5px;
+  margin-left: 4px;
 }
 .sidebar-product-item {
   margin-bottom: 7px;
-  padding: 7.5px 10px;
+  padding: 7.5px 8px;
   border-radius: 7px;
   background: #fff;
   border: 1.3px solid #e2e8f4;
@@ -90,11 +92,11 @@
   background: #f1f8ff;
   border-color: #7fbaff;
 }
+
 .sidebar-product-item.active-product {
   background: linear-gradient(87deg, #1860cb 50%, #56abff 100%);
   color: #fff;
   font-weight: 700;
-  border-left: 5px solid #1860cb;
 }
 .sidebar-product-item a {
   color: #244;
