@@ -74,10 +74,10 @@ function HomePage({ productsData }) {
             <section className="company-summary-wrapper">
               <div className="company-summary">
                 <span className="mb-5 section-badge badge-text">
-                  Medi Hollow Instruments - "Excellence in Medical Equipment"
+                  WELCOME - Medi Hollow Instruments
                 </span>
                 
-                <div className="row align-items-center g-5">
+                <div className="row align-items-center g-3">
                   <div className="col-lg-6 mb-4 mb-lg-0">
                     <div className="content-wrapper">
                       <div className="icon-text-group mb-4">

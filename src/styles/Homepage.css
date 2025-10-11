@@ -41,14 +41,6 @@
   background: linear-gradient(90deg, #1565c0 0%, #42a5f5 100%);
 }
 
-/* .company-summary:hover {
-  box-shadow: 
-    0 8px 12px rgba(0, 0, 0, 0.03),
-    0 20px 40px rgba(0, 0, 0, 0.08),
-    0 0 0 1px rgba(21, 101, 192, 0.1);
-  transform: translateY(-4px);
-} */
-
 /* Section Badge */
 .section-badge {
   display: inline-block;
@@ -68,7 +60,7 @@
   margin-bottom: 3rem;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 992px) {
   .section-badge {
   display: inline-block;
   margin: 0 auto 1.5rem;
@@ -325,7 +317,7 @@
 
 /* Featured Products Section */
 .featured-products-section {
-  padding: 3rem 0;
+  padding: 1rem 0;
 }
 
 .section-header {
@@ -409,11 +401,16 @@
   .company-slider-img {
     height: 280px;
   }
-  .stats-row {
-    gap: 2rem;
-  }
   .stat-number {
     font-size: 2.5rem;
+  }
+  .stat-label {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-left: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
   .stats-row {
     flex-direction: row;
@@ -421,11 +418,24 @@
     align-content: center;
   }
   
-  .section-title {
-    font-size: 1.75rem;
-  }
+.section-header {
+  margin-bottom: 3rem;
+}
 
-    .content-wrapper {
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1565c0;
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #6c757d;
+  margin-left: 20%;
+}
+
+  .content-wrapper {
     padding-right: 0;
   }
 }
