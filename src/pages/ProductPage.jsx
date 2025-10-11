@@ -27,6 +27,9 @@ function ProductPage({ productsData }) {
   const [openSubcategories, setOpenSubcategories] = useState({});
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 992);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth >= 992);
@@ -56,6 +59,7 @@ function ProductPage({ productsData }) {
         ...prev,
         [product.subcategory]: true,
       }));
+      setCurrentImageIndex(0);
     }
   }, [productId]);
 
@@ -67,7 +71,7 @@ function ProductPage({ productsData }) {
     );
   }
 
-  const settings = {
+  const desktopSettings = {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -93,6 +97,22 @@ function ProductPage({ productsData }) {
       ...prev,
       [subcategory]: !prev[subcategory],
     }));
+  };
+
+  const handleNextImage = () => {
+    if (product.images && product.images.length > 0) {
+      setCurrentImageIndex(
+        (prev) => (prev + 1) % product.images.length
+      );
+    }
+  };
+
+  const handlePrevImage = () => {
+    if (product.images && product.images.length > 0) {
+      setCurrentImageIndex(
+        (prev) => (prev - 1 + product.images.length) % product.images.length
+      );
+    }
   };
 
   return (
@@ -214,31 +234,69 @@ function ProductPage({ productsData }) {
               </button>
             </div>
 
+            {/* Image Display - Desktop uses Slick, Mobile uses simple slider */}
             <div className="mb-4">
               {product.images && product.images.length > 0 ? (
-                <Slider {...settings}>
-                  {product.images.map((img, index) => (
-                    <div key={index}>
+                <>
+                  {/* Desktop: Slick Slider */}
+                  {isDesktop && (
+                    <Slider {...desktopSettings}>
+                      {product.images.map((img, index) => (
+                        <div key={index}>
+                          <div className="slider-image-container">
+                            <img
+                              src={img}
+                              alt={`${product.name} - Image ${index + 1}`}
+                              className="product-slider-img"
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </Slider>
+                  )}
+
+                  {/* Mobile: Simple Image Gallery */}
+                  {!isDesktop && (
+                    <div className="mobile-image-gallery">
                       <div className="slider-image-container">
                         <img
-                          src={img}
-                          alt={product.name}
-                          style={{
-                            objectFit: "contain",
-                            width: "100%",
-                            height: "100%",
-                          }}
+                          src={product.images[currentImageIndex]}
+                          alt={`${product.name} - Image ${currentImageIndex + 1}`}
+                          className="product-slider-img"
                         />
                       </div>
+                      {product.images.length > 1 && (
+                        <div className="mobile-gallery-controls">
+                          <button
+                            className="gallery-btn gallery-prev"
+                            onClick={handlePrevImage}
+                            aria-label="Previous image"
+                          >
+                            ‹
+                          </button>
+                          <span className="gallery-indicator">
+                            {currentImageIndex + 1} / {product.images.length}
+                          </span>
+                          <button
+                            className="gallery-btn gallery-next"
+                            onClick={handleNextImage}
+                            aria-label="Next image"
+                          >
+                            ›
+                          </button>
+                        </div>
+                      )}
                     </div>
-                  ))}
-                </Slider>
+                  )}
+                </>
               ) : (
-                <img
-                  src="https://via.placeholder.com/600x400?text=No+Image+Available"
-                  alt="Placeholder"
-                  className="img-fluid rounded mx-auto d-block"
-                />
+                <div className="slider-image-container">
+                  <img
+                    src="https://via.placeholder.com/600x400?text=No+Image+Available"
+                    alt="Placeholder"
+                    className="product-slider-img"
+                  />
+                </div>
               )}
             </div>
 

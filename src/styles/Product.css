@@ -1,6 +1,4 @@
-/* --------------------------------------------
-   Product Page Styles (full)
-   -------------------------------------------- */
+/* Product Page Styles (full) */
 
 body {
   background-color: #f7f9fc;
@@ -29,9 +27,19 @@ body {
   overflow: hidden;
 }
 
-/* --------------------------------------------
-   Product Image Slider
-   -------------------------------------------- */
+/* Product Image Slider */
+.image-slider-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.slider-slide-wrapper {
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
 .slider-image-container {
   width: 100%;
   height: 400px;
@@ -40,17 +48,26 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  background: #fff;
+  background: #f5f5f5;
   position: relative;
   box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
   padding: 10px;
+  box-sizing: border-box;
 }
 
-.slider-image-container img {
-  transition: transform 0.3s ease-in-out;
+.product-slider-img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
-.slider-image-container:hover img {
+
+.slider-image-container:hover .product-slider-img {
   transform: scale(1.1);
+}
+
+.product-slider-img {
+  transition: transform 0.3s ease-in-out;
 }
 
 /* Table hover */
@@ -70,6 +87,32 @@ body {
   gap: 12px;
   align-items: center;
   justify-content: flex-end;
+}
+
+/* Slick Slider Base Styles */
+.slick-slider {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.slick-list {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.slick-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
 }
 
 /* Mobile Responsive Styles */
@@ -100,25 +143,111 @@ body {
 
   /* Image slider area */
   .slider-image-container {
-    height: 250px !important;
-    padding: 8px;
+    height: 300px !important;
+    min-height: 300px;
+    padding: 10px !important;
     border-radius: 10px;
     width: 100%;
     max-width: 100%;
     display: flex !important;
-    align-items: center;
-    justify-content: center;
-    min-height: 250px;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #f5f5f5;
+    box-sizing: border-box;
   }
 
-  .slider-image-container img {
+  .product-slider-img {
     object-fit: contain !important;
     width: auto !important;
     height: auto !important;
-    max-width: 100% !important;
-    max-height: 230px !important;
+    max-width: 90% !important;
+    max-height: 280px !important;
     display: block !important;
-    margin: 0 auto;
+    margin: 0 auto !important;
+  }
+
+  /* Mobile Gallery */
+  .mobile-image-gallery {
+    width: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .mobile-image-gallery .slider-image-container {
+    transition: opacity 0.3s ease;
+  }
+
+  .mobile-gallery-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 12px;
+  }
+
+  .gallery-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+  }
+
+  .gallery-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .gallery-indicator {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+  }
+
+  /* Slick slider mobile */
+  .slick-slider {
+    width: 100%;
+  }
+
+  .slick-list {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .slick-track {
+    display: flex !important;
+    width: 100% !important;
+  }
+
+  .slick-slide {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slick-slide > div {
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hide arrows on mobile */
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+
+  .slick-dots {
+    bottom: 10px !important;
   }
 
   /* Heading + text adjustments */
@@ -145,7 +274,6 @@ body {
   .btn {
     font-size: 0.9rem;
     padding: 8px 16px;
-    white-space: nowrap;
   }
 
   /* Table section */
@@ -181,7 +309,6 @@ body {
     padding: 0 8px;
   }
 
-  /* Fix flex layouts on mobile */
   .d-flex.flex-column.flex-md-row {
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -190,47 +317,6 @@ body {
   .d-flex.flex-column.flex-md-row .btn {
     margin-top: 10px;
     width: 100%;
-  }
-
-  /* Slick slider adjustments for mobile */
-  .slick-slider {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .slick-list {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  .slick-track {
-    width: 100% !important;
-    display: flex !important;
-    align-items: center;
-  }
-
-  .slick-slide {
-    width: 100% !important;
-    display: flex !important;
-  }
-
-  .slick-slide > div {
-    width: 100%;
-    max-width: 100%;
-    display: flex !important;
-  }
-
-  .slick-slide img {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  /* Hide arrows on mobile - users will swipe */
-  .slick-prev,
-  .slick-next {
-    display: none !important;
   }
 }
 
@@ -245,11 +331,32 @@ body {
   }
 
   .slider-image-container {
-    height: 200px !important;
-    padding: 5px;
+    height: 250px !important;
+    min-height: 250px;
+    padding: 8px !important;
     display: flex !important;
-    align-items: center;
-    justify-content: center;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .product-slider-img {
+    max-height: 230px !important;
+    width: auto !important;
+    max-width: 90% !important;
+  }
+
+  .mobile-gallery-controls {
+    gap: 10px;
+  }
+
+  .gallery-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .gallery-indicator {
+    font-size: 12px;
   }
 
   h1, .section-heading {
@@ -278,7 +385,6 @@ body {
     font-size: 0.8rem;
   }
 
-  /* Ensure cards don't overflow */
   .col-md-6,
   .col-lg-5 {
     padding: 0 5px;
