@@ -6,10 +6,52 @@
 }
 
 .logo-img {
-  height: 45px;
-  width: 180px;
-  border-radius: 5px;
-  object-fit: cover;
+  height: 40px;
+  width: 40px;
+  object-fit: scale-down;
+}
+
+.site-title {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #0d6efd;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.site-subtitle {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.mx-2 {
+  display: block;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+
+.ms-2 {
+  margin-left: 0 !important;
+  padding: 0;
+}
+
+.ms-1 {
+  margin-left: 0 !important;
+  padding: 0;
 }
 
 /* --- Navbar toggler --- */
@@ -25,6 +67,14 @@
 
 /* --- Desktop Menu --- */
 @media (min-width: 992px) {
+  .site-title {
+    font-size: 1.45rem;
+  }
+
+  .site-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+  }
   .navbar-collapse {
     display: flex !important;
     visibility: visible !important;
@@ -42,6 +92,14 @@
 
 /* --- Mobile Menu --- */
 @media (max-width: 991px) {
+  .site-title {
+    font-size: 1.1rem;
+  }
+
+  .site-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+  }
   .navbar-custom {
     height: auto;
   }
@@ -59,7 +117,8 @@
 
   .logo-img {
     height: 40px;
-    width: 150px;
+    width: 40px;
+    object-fit: scale-down;
   }
 
   .mobile-products-trigger {

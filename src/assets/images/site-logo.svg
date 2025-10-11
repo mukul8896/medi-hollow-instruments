@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      text { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
+    </style>
+    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d6efd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0dcaf0;stop-opacity:1" />
+    </linearGradient>
+    <filter id="faviconShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Premium Background -->
+  <rect width="200" height="200" fill="#ffffff" rx="45"/>
+
+  <!-- Subtle outer glow -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#faviconGradient)" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Main circle frame -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="url(#faviconGradient)" stroke-width="2" opacity="0.35"/>
+
+  <!-- Inner decorative circle -->
+  <circle cx="100" cy="100" r="78" fill="none" stroke="url(#faviconGradient)" stroke-width="0.8" opacity="0.2"/>
+
+  <!-- Three vertical bars with enhanced styling -->
+  <g filter="url(#faviconShadow)">
+    <!-- Left bar -->
+    <rect x="55" y="45" width="12" height="85" rx="6" fill="url(#faviconGradient)" opacity="0.75"/>
+    
+    <!-- Center bar (taller for emphasis) -->
+    <rect x="94" y="35" width="12" height="110" rx="6" fill="url(#faviconGradient)"/>
+    
+    <!-- Right bar -->
+    <rect x="133" y="45" width="12" height="85" rx="6" fill="url(#faviconGradient)" opacity="0.75"/>
+  </g>
+
+  <!-- Premium decorative dots -->
+  <circle cx="61" cy="155" r="5" fill="url(#faviconGradient)" opacity="0.85"/>
+  <circle cx="100" cy="158" r="5" fill="url(#faviconGradient)"/>
+  <circle cx="139" cy="155" r="5" fill="url(#faviconGradient)" opacity="0.85"/>
+
+  <!-- Optional: Text for larger display (will be small on favicon) -->
+  <!-- <text x="100" y="190" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="12" fill="#0d6efd" text-anchor="middle" letter-spacing="0.5">MHI</text> -->
+</svg>

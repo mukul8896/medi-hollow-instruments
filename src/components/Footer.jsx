@@ -27,7 +27,7 @@ const Footer = () => {
             <div className="col-12 col-md-4">
               <div className="footer-brand">
                 <img
-                  src="/assets/images/logo.png"
+                  src="/public/vite.svg"
                   alt="Medi Hollow Instruments"
                   className="footer-logo"
                   onError={(e) => { e.currentTarget.style.display = "none"; }}

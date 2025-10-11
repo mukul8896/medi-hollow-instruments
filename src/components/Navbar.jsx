@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/images/site-icon.svg";
+import logo from "../assets/images/site-logo.svg";
 import "../styles/Navbar.css";
 import "../styles/MegaMenu.css";
 
@@ -99,6 +99,10 @@ function Navbar() {
       <div className="container">
         <Link to="/" className="navbar-brand d-flex align-items-center">
           <img src={logo} alt="Logo" className="logo-img" />
+          <div className="mx-2">
+            <span className="ms-2 site-title">Medi Hollow</span>
+            <span className="ms-1 site-subtitle">Instruments</span>
+          </div>
         </Link>
 
         <button 
