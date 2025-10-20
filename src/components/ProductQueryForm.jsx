@@ -63,7 +63,10 @@ function ProductQueryForm({ show, onClose, product }) {
       });
 
       const data = await resp.json().catch(() => ({}));
-      if (!resp.ok) throw new Error(data.error || `HTTP ${resp.status}`);
+      if (!data.ok){ 
+        console.log("send email failed:", data.ok);
+        throw new Error(data.error || `HTTP ${resp.status}`);
+      }
       setSent(true);
     } catch (err) {
       console.error("send email error:", err);
