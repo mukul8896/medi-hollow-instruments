@@ -61,8 +61,9 @@ function ProductQueryForm({ show, onClose, product }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-
+      console.log("send email response:", resp);
       const data = await resp.json().catch(() => ({}));
+      console.log("send email data:", data);
       if (!data.ok){ 
         console.log("send email failed:", data.ok);
         throw new Error(data.error || `HTTP ${resp.status}`);
