@@ -38,6 +38,7 @@ function getEmailConfig() {
 
 export default async function handler(req, res) {
   // Only allow POST
+  console.log('Received request method:', req.method);
   if (req.method !== 'POST') {
     return res.status(405).json({ ok: false, error: 'Method not allowed' });
   }
