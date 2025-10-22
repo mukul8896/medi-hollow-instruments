@@ -20,7 +20,7 @@ function TopHeader({ address, contact }) {
 
         <div className="th-center">
           <FaPhoneAlt className="me-1 opacity-75 phoneNumber" size={12} />
-          <a href={`tel:${contact.phone}`} className="th-link me-3">{contact.phone}</a>
+          <a href={`tel:${contact.phone[0]}`} className="text-decoration-none th-link me-3">{contact.phone[0]}</a>
           <FaEnvelope className="me-1 opacity-75 emailaddress" size={12} />
           <a href={`mailto:${contact.email}`} className="th-link emailaddress">{contact.email}</a>
         </div>

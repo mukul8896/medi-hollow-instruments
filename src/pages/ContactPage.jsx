@@ -77,9 +77,7 @@ function ContactPage() {
               </div>
               <div className="d-flex align-items-center">
                 <FaPhone className="text-success me-2" size={18} />
-                <a href={`tel:${contact.phone}`} className="text-decoration-none">
-                  {contact.phone}
-                </a>
+                <a href={`tel:${contact.phone[0]}`} className="text-decoration-none">{contact.phone[0]}</a>
               </div>
               <div className="d-flex align-items-center">
                 <FaEnvelope className="text-primary me-2" size={18} />
@@ -205,9 +203,7 @@ function ContactPage() {
               </li>
               <li className="d-flex mb-3">
                 <FaPhone className="text-success me-3 mt-1" size={20} />
-                <a href={`tel:${contact.phone}`} className="text-decoration-none">
-                  {contact.phone}
-                </a>
+                <a href={`tel:${contact.phone[0]}`} className="text-decoration-none">{contact.phone[0]}</a>
               </li>
               <li className="d-flex">
                 <FaEnvelope className="text-primary me-3 mt-1" size={20} />

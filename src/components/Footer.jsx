@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn, FaTwitter, FaFacebookF, FaInstagram, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import "../styles/Footer.css";
+import siteConfig from "../siteConfig.json";
+
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -28,11 +30,11 @@ const Footer = () => {
               <div className="footer-brand">
                 <img
                   src="/public/vite.svg"
-                  alt="Medi Hollow Instruments"
+                  alt={siteConfig.siteName}
                   className="footer-logo"
                   onError={(e) => { e.currentTarget.style.display = "none"; }}
                 />
-                <h4 className="brand-name">Medi Hollow Instruments</h4>
+                <h4 className="brand-name">{siteConfig.siteName}</h4>
               </div>
               <p className="brand-blurb">
                 Manufacturer and supplier of premium medical and surgical equipment,
@@ -71,15 +73,15 @@ const Footer = () => {
               <ul className="footer-contact">
                 <li>
                   <FaMapMarkerAlt className="me-2 text-muted" />
-                  <span>Plot No-58, Block C, Wazir Pur Industrial Area, Delhi-110054, India</span>
+                  <span>{siteConfig.address}</span>
                 </li>
                 <li>
                   <FaPhoneAlt className="me-2 text-muted" />
-                  <a href="tel:+919650511154">+91 9650511154</a> <span className="mx-1">|</span> <a href="tel:+918826876070">+91 8826876070</a>
+                  <a href={`tel:${siteConfig.contact.phone[0]}`}>{siteConfig.contact.phone[0]}</a>
                 </li>
                 <li>
                   <FaEnvelope className="me-2 text-muted" />
-                  <a href="mailto:mukul.sharma8896@gmail.com">mukul.sharma8896@gmail.com</a>
+                  <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
                 </li>
                 <li>
                   <span className="contact-label">Hours:</span> Mon–Sat, 9:30 AM – 6:30 PM
@@ -92,7 +94,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container bottom-inner">
-          <p className="mb-0">© {year} medi Hollow Instruments. All rights reserved.</p>
+          <p className="mb-0">© {year} {siteConfig.siteName}. All rights reserved.</p>
           <ul className="bottom-links">
             <li><Link to="/privacy">Privacy</Link></li>
             <li><Link to="/terms">Terms</Link></li>

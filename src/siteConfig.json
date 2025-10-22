@@ -1,18 +1,15 @@
 {
-    "siteName": "Elite Surgical",
-    "address": "Plot No-58, Block C, Wazir Pur Industrial Area, Delhi-110054, India",
-    "contact": {
-      "phone": "+91 9650511154 +91 8826876070",
-      "email": "mukul.sharma8896@gmail.com"
-    },
-    "aboutUs": {
-        "title": "About Our Factory",
-        "description": "At ELITE SURGICAL, we take immense pride in being a trusted name in the world of Hospital Holloware products. With a strong commitment to quality, reliability, and quick dispatch, we ensure that healthcare professionals receive the best-in-class equipment for their medical needs.\n\nFounded with a vision to deliver high-quality hospital supplies, ELITE SURGICAL has grown into a reputable brand known for its precision-engineered products designed to meet the rigorous demands of the healthcare industry. Our products undergo stringent quality checks to ensure they adhere to the highest industry standards.\n\n**Our Commitment**\n- **Unmatched Quality** – We use premium-grade materials and advanced manufacturing techniques to produce durable and efficient hospital holloware.\n- **Reliability & Trust** – Our products are designed for long-term use, making us a dependable partner for healthcare institutions.\n- **Fast & Efficient Delivery** – We understand the importance of time in the medical field, which is why we focus on quick dispatch and timely delivery to our customers.\n\nAs we continue to expand our presence in the healthcare sector, our mission remains the same – to provide top-notch hospital holloware products that enhance patient care and improve operational efficiency for medical professionals worldwide.\n\n**ELITE SURGICAL – Precision. Quality. Care.**"
-    },
-    "socialLinks": {
-      "facebook": "https://facebook.com/elitesurgical",
-      "linkedin": "https://linkedin.com/company/elitesurgical",
-      "instagram": "https://instagram.com/elitesurgical"
-    }
+  "siteName": "Medi Hollow Instruments",
+  "address": "Ground Floor, Plot No-12, Pkt-b, Sector-2, Bawana, North West Delhi, Delhi-110039, India",
+  "address_ofc": "Plot No-58, Block C, Wazir Pur Industrial Area, Delhi-110054, India",
+  "contact": {
+    "phone": ["+91 9650511154"],
+    "email": "medihollowinstruments@gmail.com"
+  },
+  "socialLinks": {
+    "facebook": "https://facebook.com/elitesurgical",
+    "linkedin": "https://linkedin.com/company/elitesurgical",
+    "instagram": "https://instagram.com/elitesurgical"
   }
+}
   
