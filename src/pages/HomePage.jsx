@@ -106,7 +106,7 @@ function HomePage({ productsData }) {
 
                       <div className="stats-row mt-4">
                         <div className="stat-item">
-                          <h3 className="stat-number">20+</h3>
+                          <h3 className="stat-number">30+</h3>
                           <p className="stat-label">Years Experience</p>
                         </div>
                         <div className="stat-item">
@@ -114,7 +114,7 @@ function HomePage({ productsData }) {
                           <p className="stat-label">Products</p>
                         </div>
                         <div className="stat-item">
-                          <h3 className="stat-number">500+</h3>
+                          <h3 className="stat-number">100+</h3>
                           <p className="stat-label">Happy Clients</p>
                         </div>
                       </div>
@@ -147,7 +147,7 @@ function HomePage({ productsData }) {
               <section className="featured-products-section mb-2">
                 <div className="section-header text-center mb-5">
                   <h2 className="section-title">Featured Products</h2>
-                  <p className="section-subtitle">Discover our most popular medical</p>
+                  <p className="section-subtitle">Discover our most popular products</p>
                 </div>
                 <div className="row">
                   {featuredProducts.slice(0, 6).map((product) => (

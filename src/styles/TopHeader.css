@@ -18,8 +18,8 @@
 }
 
 .th-left, .th-center, .th-right { display: flex; align-items: center; }
-.th-left { gap: 1px; }
-.th-center { justify-content: center; gap: 6px; flex-wrap: wrap; }
+.th-left { margin-right: 8px; gap: 1px; }
+.th-center {justify-content: center; gap: 5px; flex-wrap: wrap; }
 .th-right { justify-content: flex-end; gap: 6px; }
 
 .th-link { color: #e9ecef; text-decoration: none; }

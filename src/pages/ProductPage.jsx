@@ -299,10 +299,17 @@ function ProductPage({ productsData }) {
                 </div>
               )}
             </div>
+            
+            {product.note && (
+              <>
+                <h4>Note</h4>
+                <p className="text-muted">{product.note}</p>
+              </>
+            )}
 
             {product.description && (
               <>
-                <h4>Description</h4>
+                <h5>Description</h5>
                 <p className="text-muted">{product.description}</p>
               </>
             )}

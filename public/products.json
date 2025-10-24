@@ -4,17 +4,28 @@
       {
         "id": 11,
         "name": "Bedpane Female",
-        "description": "Also Available in 304 Grade.",
-        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
-        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "note": "Also Available in 304 Grade.",
+        "description":"A female bedpan is a shallow, ergonomically designed container used by women for toileting while bedridden. Typically made of durable stainless steel or plastic, it features a shape tailored for comfort and ease of use in a lying or sitting position. It is commonly used in hospitals, nursing homes, and home care settings.",
+        "images": ["/assets/images/bedpane_female.jpg"],
+        "sizes": [{ "name": "101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
         "featured": true
       },
       {
         "id": 12,
+        "name": "Bedpane Female Seamless",
+        "note": "Also Available in 304 Grade.",
+        "description":"A female bedpan is a shallow, ergonomically designed container used by women for toileting while bedridden. Typically made of durable stainless steel or plastic, it features a shape tailored for comfort and ease of use in a lying or sitting position. It is commonly used in hospitals, nursing homes, and home care settings.",
+        "images": ["/assets/images/bedpane_gemale_seamless.jpg"],
+        "sizes": [{ "name": "101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "featured": true
+      },
+      {
+        "id": 13,
         "name": "Bedpane Male",
-        "description": "Also Available in 304 Grade.",
-        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
-        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "note": "Also Available in 304 Grade.",
+        "description":"A male bedpan is a portable container designed for men to urinate or defecate while confined to bed. Made of stainless steel or plastic, it has a contoured shape for comfort and ease of use. Commonly used in hospitals, nursing homes, and home care, it facilitates hygiene and convenience for bedridden patients.",
+        "images": ["/assets/images/bedpane_male.jpg"],
+        "sizes": [{ "name": "101-Bed Pan Male", "details": "355 X 290 X 70 mm" }],
         "featured": true
       }
     ],
@@ -22,17 +33,19 @@
       {
         "id": 21,
         "name": "Urinal Male",
-        "description": "Also Available in 304 Grade.",
-        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
-        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "note": "Also Available in 304 Grade.",
+        "description":"",
+        "images": ["/assets/images/urinal_male.jpg"],
+        "sizes": [{ "name": "101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
         "featured": true
       },
       {
         "id": 22,
-        "name": "Urinal Female",
-        "description": "Also Available in 304 Grade.",
-        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
-        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "name": "Urinal Female Perfection",
+        "note": "Also Available in 304 Grade.",
+        "description":"",
+        "images": ["/assets/images/urinal_female_perfection.jpg"],
+        "sizes": [{ "name": "101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
         "featured": true
       }
     ],
@@ -40,17 +53,19 @@
       {
         "id": 31,
         "name": "Kidney Tray",
-        "description": "Also Available in 304 Grade.",
-        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
-        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "note": "Also Available in 304 Grade.",
+        "description":"Kideny Tray is a top-grade medical surgical instrument tray with a focus on safe and systematic handling of surgical instruments. It is made from high-grade stainless steel or medical plastic, making it hygienic, durable, and easily sterilizable. Suitable for use in hospitals, clinics, and surgical facilities, the tray makes medical procedures more efficient.",
+        "images": ["/assets/images/kideny_tray.jpg"],
+        "sizes": [{ "name": "101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
         "featured": true
       },
       {
         "id": 32,
         "name": "Instrument Tray",
-        "description": "Also Available in 304 Grade.",
-        "images": ["/assets/images/bedpanfemalesmall1.jpg", "/assets/images/bedpanfemalesmall2.jpg"],
-        "sizes": [{ "name": "SVBPFE 101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "note": "Also Available in 304 Grade.",
+        "description":"Kideny Tray is a top-grade medical surgical instrument tray with a focus on safe and systematic handling of surgical instruments. It is made from high-grade stainless steel or medical plastic, making it hygienic, durable, and easily sterilizable. Suitable for use in hospitals, clinics, and surgical facilities, the tray makes medical procedures more efficient.",
+        "images": ["/assets/images/instruments_trays.jpg"],
+        "sizes": [{ "name": "101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
         "featured": true
       },
       {
