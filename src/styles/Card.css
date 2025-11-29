@@ -1,4 +1,24 @@
 /* Card Base Styles */
+.card-link-wrapper {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card-link-wrapper:hover {
+  text-decoration: none;
+}
+
+.product-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
 .card,
 .product-card {
   transition: box-shadow 0.2s, transform 0.18s;

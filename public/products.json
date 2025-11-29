@@ -7,7 +7,8 @@
         "note": "Also Available in 304 Grade.",
         "description":"A female bedpan is a shallow, ergonomically designed container used by women for toileting while bedridden. Typically made of durable stainless steel or plastic, it features a shape tailored for comfort and ease of use in a lying or sitting position. It is commonly used in hospitals, nursing homes, and home care settings.",
         "images": ["/assets/images/bedpane_female.jpg"],
-        "sizes": [{ "name": "101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "sizeHeaders": ["Model Name", "Dimensions"],
+        "sizes": [{ "Model Name": "Bed Pan Female", "Dimensions": "355 X 290 X 70 mm" }],
         "featured": true
       },
       {
@@ -16,7 +17,8 @@
         "note": "Also Available in 304 Grade.",
         "description":"A female bedpan is a shallow, ergonomically designed container used by women for toileting while bedridden. Typically made of durable stainless steel or plastic, it features a shape tailored for comfort and ease of use in a lying or sitting position. It is commonly used in hospitals, nursing homes, and home care settings.",
         "images": ["/assets/images/bedpane_gemale_seamless.jpg"],
-        "sizes": [{ "name": "101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "sizeHeaders": ["Model Name", "Dimensions"],
+        "sizes": [{ "Model Name": "Seamless Bed Pan Female", "Dimensions": "350 X 285 X 90 mm" }],
         "featured": true
       },
       {
@@ -25,7 +27,8 @@
         "note": "Also Available in 304 Grade.",
         "description":"A male bedpan is a portable container designed for men to urinate or defecate while confined to bed. Made of stainless steel or plastic, it has a contoured shape for comfort and ease of use. Commonly used in hospitals, nursing homes, and home care, it facilitates hygiene and convenience for bedridden patients.",
         "images": ["/assets/images/bedpane_male.jpg"],
-        "sizes": [{ "name": "101-Bed Pan Male", "details": "355 X 290 X 70 mm" }],
+        "sizeHeaders": ["Model Name", "Dimensions"],
+        "sizes": [{ "Model Name": "Bed Pan Male", "Dimensions": "365 X 235 X 70 mm" }],
         "featured": true
       }
     ],
@@ -36,7 +39,8 @@
         "note": "Also Available in 304 Grade.",
         "description":"",
         "images": ["/assets/images/urinal_male.jpg"],
-        "sizes": [{ "name": "101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "sizeHeaders": ["Model Name", "Capacity"],
+        "sizes": [{ "name": "Model Name", "Capacity": "700 ml" }],
         "featured": true
       },
       {
@@ -45,7 +49,8 @@
         "note": "Also Available in 304 Grade.",
         "description":"",
         "images": ["/assets/images/urinal_female_perfection.jpg"],
-        "sizes": [{ "name": "101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "sizeHeaders": ["Model Name", "Capacity"],
+        "sizes": [{ "name": "Model Name", "Capacity": "700 ml" }],
         "featured": true
       }
     ],
@@ -54,18 +59,39 @@
         "id": 31,
         "name": "Kidney Tray",
         "note": "Also Available in 304 Grade.",
-        "description":"Kideny Tray is a top-grade medical surgical instrument tray with a focus on safe and systematic handling of surgical instruments. It is made from high-grade stainless steel or medical plastic, making it hygienic, durable, and easily sterilizable. Suitable for use in hospitals, clinics, and surgical facilities, the tray makes medical procedures more efficient.",
+        "description": "Kidney Tray is a top-grade medical surgical instrument tray with a focus on safe and systematic handling of surgical instruments. It is made from high-grade stainless steel or medical plastic, making it hygienic, durable, and easily sterilizable. Suitable for use in hospitals, clinics, and surgical facilities, the tray makes medical procedures more efficient.<br><br><strong>Product Specifications:</strong><ul><li>Product mentioned as 'Economy' are made of 0.35mm S.S. sheet.</li><li>Product mentioned as 'Deluxe' are made of 0.5mm J4 grade S.S. sheet.</li><li>Product mentioned as 'Super Deluxe' are made of 0.5mm 304 grade S.S.</li><li>Product can also be made from 0.6mm S.S. sheet to 0.8mm S.S. sheet as per customer requirement with reasonable minimum order.</li><li>All Sizes are approximate & measured from inner to inner.",
         "images": ["/assets/images/kideny_tray.jpg"],
-        "sizes": [{ "name": "101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "sizeHeaders": ["Size in Inches", "Size in mm", "Economy", "Deluxe", "Super Deluxe"],
+        "sizes": [
+          { "Size in Inches": "6\"", "Size in mm": "160 X 77 X 35", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "6\" special", "Size in mm": "165 X 88 X 38", "Economy": "", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "8\"", "Size in mm": "205 X 105 X 40", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "10\"", "Size in mm": "245 X 110 X 40", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "10 x 6", "Size in mm": "255 X 155 X 40", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "12\"", "Size in mm": "305 X 140 X 42", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "12\" Special", "Size in mm": "305 X 140 X 50", "Economy": "", "Deluxe": "Yes", "Super Deluxe": "Yes" }
+        ],
         "featured": true
       },
       {
         "id": 32,
         "name": "Instrument Tray",
         "note": "Also Available in 304 Grade.",
-        "description":"Kideny Tray is a top-grade medical surgical instrument tray with a focus on safe and systematic handling of surgical instruments. It is made from high-grade stainless steel or medical plastic, making it hygienic, durable, and easily sterilizable. Suitable for use in hospitals, clinics, and surgical facilities, the tray makes medical procedures more efficient.",
         "images": ["/assets/images/instruments_trays.jpg"],
-        "sizes": [{ "name": "101-Bed Pan Female", "details": "355 X 290 X 70 mm" }],
+        "description": "Instrument Tray is a high-quality medical surgical tray designed for organizing and handling surgical instruments safely and efficiently. It is manufactured from premium-grade stainless steel, ensuring durability, hygiene, and easy sterilization. Suitable for use in hospitals, clinics, and operation theatres, this tray ensures smooth and systematic handling of instruments.<br><br><strong>Product Specifications:</strong><ul><li>Product mentioned as 'Economy' are made of 0.35mm S.S. sheet.</li><li>Product mentioned as 'Deluxe' are made of 0.5mm J4 grade S.S. sheet.</li><li>Product mentioned as 'Super Deluxe' are made of 0.5mm 304 grade S.S.</li><li>Product can also be made from 0.6mm S.S. sheet to 0.8mm S.S. sheet as per customer requirement with reasonable minimum order.</li><li>All Sizes are approximate & measured from inner to inner.</li></ul><br><strong>Product Code:</strong> SVIT",
+        "sizeHeaders": ["Size in Inches", "Size in mm", "Economy", "Deluxe", "Super Deluxe"],
+        "sizes": [
+          { "Size in Inches": "8 X 6", "Size in mm": "200 X 150 X 48", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "9 X 5", "Size in mm": "230 X 125 X 50", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "9 X 6", "Size in mm": "230 X 155 X 48", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "10 X 8", "Size in mm": "255 X 200 X 48", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "11 X 7", "Size in mm": "280 X 180 X 48", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "12 X 8", "Size in mm": "305 X 205 X 48", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "12 X 10", "Size in mm": "305 X 255 X 48", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "14 X 10", "Size in mm": "355 X 255 X 50", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "15 X 12", "Size in mm": "380 X 305 X 50", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" },
+          { "Size in Inches": "18 X 12", "Size in mm": "455 X 310 X 50", "Economy": "Yes", "Deluxe": "Yes", "Super Deluxe": "Yes" }
+        ],
         "featured": true
       },
       {

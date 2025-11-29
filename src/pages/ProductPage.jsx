@@ -310,35 +310,42 @@ function ProductPage({ productsData }) {
             {product.description && (
               <>
                 <h5>Description</h5>
-                <p className="text-muted">{product.description}</p>
+                <p className="text-muted" style={{ whiteSpace: 'pre-line' }} dangerouslySetInnerHTML={{ __html: product.description }}/>
               </>
             )}
 
-            {product.sizes?.length > 0 && (
-              <>
-                <h4 className="mt-4">Available Sizes</h4>
-                <div className="table-responsive">
-                  <table className="table table-bordered table-hover">
-                    <thead className="table-dark">
-                      <tr>
-                        <th>Model</th>
-                        {product.sizes[0].capacity && <th>Capacity</th>}
-                        <th>Dimensions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {product.sizes.map((size, index) => (
-                        <tr key={index}>
-                          <td>{size.name}</td>
-                          {size.capacity && <td>{size.capacity}</td>}
-                          <td>{size.details}</td>
+          {product.sizes?.length > 0 && (
+            <>
+              <h4 className="mt-4">Available Sizes</h4>
+              <div className="table-responsive">
+                <table className="table table-bordered table-hover">
+                  <thead className="table-dark">
+                    <tr>
+                      {(product.sizeHeaders ||
+                        [...new Set(product.sizes.flatMap((s) => Object.keys(s)))])
+                        .map((header, index) => (
+                          <th key={index}>{header}</th>
+                        ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {product.sizes.map((size, i) => {
+                      const keys = product.sizeHeaders ||
+                        [...new Set(product.sizes.flatMap((s) => Object.keys(s)))];
+                      return (
+                        <tr key={i}>
+                          {keys.map((key, j) => (
+                            <td key={j}>{size[key] || ""}</td>
+                          ))}
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </>
-            )}
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+
 
             {relatedProducts.length > 0 && (
               <div className="mt-5">
